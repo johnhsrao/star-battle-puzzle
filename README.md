@@ -1,0 +1,2 @@
+# star-battle-puzzle
+A Star Battle puzzle web game develop for Software Construction final project. In a Star Battle Puzzle, a n x n grid is divided into n regions. To solve the puzzle, the player must find a placement of 2n stars such that each row, each column, and each region of the puzzle has exactly 2 stars, and no stars are vertically, horizontally, or diagonally adjacent. More tutorials on the puzzle can be found at https://krazydad.com/starbattle/.
