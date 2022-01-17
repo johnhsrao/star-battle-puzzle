@@ -1,0 +1,36 @@
+"use strict";
+/* Copyright (c) 2021 MIT 6.031 course staff, all rights reserved.
+ * Redistribution of original or derived work requires permission of course staff.
+ */
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const assert_1 = __importDefault(require("assert"));
+const mocha_1 = require("mocha");
+const parserlib = __importStar(require("parserlib"));
+(0, mocha_1.describe)('ParserLib version', function () {
+    (0, mocha_1.it)('parserlib needs to be version 3.2.x', function () {
+        (0, assert_1.default)(parserlib.VERSION.startsWith("3.2"));
+    });
+});
+//# sourceMappingURL=ParserLibVersionTest.js.map

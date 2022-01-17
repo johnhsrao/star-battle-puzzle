@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Star Battle</title>
+
+    <style>
+        ul {
+            list-style-position: outside;
+            margin: 0px;
+            padding-left: 20px;
+        }
+        #canvas {
+            border: 1px solid black;
+            margin: 20px;
+            float: left;
+        }
+        #instructions {
+            float: left;
+            margin-top: 20px;
+            max-width: 400px;
+        }
+        #controls {
+            clear: both;
+        }
+        #puzzleInput {
+            margin-top: 20px;
+        }
+        #outputArea {
+            clear: both;
+            border: 1px solid lightgray;
+            margin: 20px;
+            height: 256px;
+            width: 512px;
+            overflow: scroll;
+            padding: 5px;
+            white-space: pre-wrap;
+        }
+        /* Animated classes */
+        .spinningmedium {
+            animation-name: spin;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .spinninghard {
+            animation-name: spin;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .spinninginsane {
+            animation-name: spin;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .expanding {
+            animation-name: expand;
+            animation-duration: 1000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes spin {
+            from {
+                -webkit-transform:rotate(0deg);
+            }
+
+            to {
+                -webkit-transform:rotate(360deg);
+            }
+        }
+        @keyframes expand {
+            from {
+                -webkit-transform:scale(1);
+            }
+
+            to {
+                -webkit-transform:scale(2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="256" height="256"></canvas>
+
+    <div id="instructions">
+        <text style="font-size:40px">Star Battle ⭐️⚔️</text>
+        <ul>
+            <li>Click an empty box to place a star 🌟</li>
+            <li>Click on a star to remove it 😔</li>
+            <li>To load a new puzzle 🧩, select the puzzle name and difficulty in the menu below and click 'Load'</li>
+            <li>Increase the difficulty for a challenge 🏁 (you might get nauseous)</li> 
+            
+        </ul>
+
+        <!-- Select box listing all puzzles on the server -->
+        <select id="puzzleInput">
+        </select>
+        <!-- Select box listing the possible difficulties -->
+        <select id="puzzleDifficulty">
+            <option value="normal">normal</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+            <option value="insane">insane 😈⚔️</option>
+        </select>
+        <!-- Get puzzle and load it -->
+        <input type="submit" id="puzzleSubmit" value="Load">
+    </div>
+    
+    <!-- Output game messages here -->
+    <div id="outputArea"></div>
+
+    <!-- Our javascript -->
+    <script src="dist/client-bundle.js"></script>
+</body>
+</html>
